@@ -13,9 +13,11 @@ $query = "UPDATE addressbook SET firstname='$firstName', "
 
 $status = mysqli_query($link, $query) or die(mysqli_error($link));
 if ($status) {
+
     $row["status"] = $status;
     $row["message"] = "Contact record is updated successfully.";
     echo json_encode($row);
+
 } else {
     $row["status"] = $status;
     $row["message"] = "Update unsuccessful.";
